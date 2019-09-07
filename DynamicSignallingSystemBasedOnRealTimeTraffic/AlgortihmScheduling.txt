@@ -1,0 +1,10 @@
+Algorithm for the scheduling algorithm:
+
+Initial considerations: Total signal cycle time is 120 sec and next traffic density is evaluated only after 120 sec.
+
+1.Matlab writes the pixel intensity values into the text file.
+2.Processing software reads from the text file whenever there is an update in the text file and sends it to the arduino.
+3.Arduino IDE calculates the ratio of time allocated to each signal by evaluating the sum of signal times and dividing it with their respective pixel values and hence assigning them priorities accordingly.
+4.Control the signals based on the above priority for time evaluated according to their traffic density.
+5.Read the new traffic density after 120 sec.
+

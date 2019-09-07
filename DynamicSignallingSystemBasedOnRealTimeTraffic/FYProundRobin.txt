@@ -1,0 +1,114 @@
+int red1 = 1;
+int yellow1 = 2;
+int green1 = 3;
+int red2 = 4;
+int yellow2 = 5;
+int green2 = 6;
+int red3 = 7;
+int yellow3 = 8;
+int green3 = 9;
+int red4 = 10;
+int yellow4 = 11;
+int green4 = 12;
+
+int sort_desc(const void *cmp1, const void *cmp2)
+{
+    // Need to cast the void * to int *
+    int a = *((int *)cmp1);
+    int b = *((int *)cmp2);
+    // The comparison
+    return a > b ? -1 : (a < b ? 1 : 0);
+    // A simpler, probably faster way:
+    //return b - a;
+}
+
+void setup() {
+    pinMode (red1, OUTPUT);
+    pinMode (yellow1, OUTPUT);
+    pinMode (green1, OUTPUT);
+    
+    pinMode (red2, OUTPUT);
+    pinMode (yellow2, OUTPUT);
+    pinMode (green2, OUTPUT);
+    
+    pinMode (red3, OUTPUT);
+    pinMode (yellow3, OUTPUT);
+    pinMode (green3, OUTPUT);
+    
+    pinMode (red4, OUTPUT);
+    pinMode (yellow4, OUTPUT);
+    pinMode (green4, OUTPUT);
+    
+    // The array
+    int lt[6] = {35, 15, 80, 2, 40, 110};
+    // Number of items in the array
+    int lt_length = sizeof(lt) / sizeof(lt[0]);
+    // qsort - last parameter is a function pointer to the sort function
+    qsort(lt, lt_length, sizeof(lt[0]), sort_desc);
+    // lt is now sorted
+}
+
+void loop() {
+    
+    digitalWrite(green1, HIGH);
+    digitalWrite(red2, HIGH);
+    digitalWrite(red3, HIGH);
+    digitalWrite(red4, HIGH);
+    delay(4000);
+    digitalWrite(green1, LOW);
+    digitalWrite(red2, LOW);
+    
+    digitalWrite(yellow1, HIGH);
+    digitalWrite(yellow2, HIGH);
+    delay(1000);
+    digitalWrite(yellow1, LOW);
+    digitalWrite(yellow2, LOW);
+    
+    digitalWrite(red1, HIGH);
+    digitalWrite(green2, HIGH);
+    delay(4000);
+    
+    digitalWrite(green2, LOW);
+    digitalWrite(red3, LOW);
+    
+    
+    digitalWrite(yellow2, HIGH);
+    digitalWrite(yellow3, HIGH);
+    delay(1000);
+    
+    digitalWrite(yellow2, LOW);
+    digitalWrite(yellow3, LOW);
+    
+    
+    digitalWrite(red2, HIGH);
+    digitalWrite(green3, HIGH);
+    digitalWrite(red4, HIGH);
+    delay(4000);
+    
+    digitalWrite(green3, LOW);
+    digitalWrite(red4, LOW);
+    
+    digitalWrite(yellow3, HIGH);
+    digitalWrite(yellow4, HIGH);
+    delay(1000);
+    
+    digitalWrite(yellow3, LOW);
+    digitalWrite(yellow4, LOW);
+    
+    digitalWrite(red3, HIGH);
+    digitalWrite(green4, HIGH);
+    delay(4000);
+    
+    digitalWrite(red3, LOW);
+    digitalWrite(green4, LOW);
+    digitalWrite(red1, LOW);
+    digitalWrite(yellow1, HIGH);
+    digitalWrite(yellow4, HIGH);
+    delay(1000);
+    
+    digitalWrite(yellow1, LOW);
+    digitalWrite(yellow4, LOW);
+    
+    
+}
+
