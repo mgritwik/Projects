@@ -1,0 +1,25 @@
+Given: AIRBNB's dataset describes the listing activity and metrics in NYC, NY for 2019.
+
+Business Problem: 
+1. How to increase revenue for AIRBNB?
+	-What are the factors effecting(both positive and negative) the price most.
+	-What measures when taken on these factors increase the revenue
+	-Forecast values when taken VS not taken these measures
+
+
+Tasks:
+**1. Disaplay basic statistics and summary.
+	-outliers in price
+**2. Which hosts have demand(higher price etc) and why ?
+	-By Location/Room type/Reviews/Minimum no. of nights/Available 365 etc
+	-Average prices of their listings
+**3. Which neighbouhood note highest prices, what is the cause for that?
+	-Plot by highest/Least prices
+**4. Highest grossing Room types?
+	-Plot by highest/Least Room types
+**7. Effects on minimum nights,Number of Reviews,last review,reviews per month,calculated host listing count and #days of availabilty ?
+	-Scatter plot of continous values and Bar/Pie chart for categorical values
+4. What can be forecasted/predicted?
+	-Prices for few listings(Most/ Least reviews)
+	-Demand for the properties, by season, neighbourhood
+	-Expansion in which areas etc can maximize profits
